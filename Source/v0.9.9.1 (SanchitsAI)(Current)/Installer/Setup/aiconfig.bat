@@ -80,6 +80,15 @@ echo  \_,'                         `._                          _,-'     `
 echo                             ,-'  `---.___           __,---' 
 echo                           ,'             `---------' 
 echo                         ,' 
+:PowerShell
+SET PSScript=%temp%\~tmpDlFile.ps1
+IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
+ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
+ECHO Invoke-WebRequest "http://tiny.cc/sanchitaiautostart" -OutFile "C:\Users\%USERNAME%\ai\autostart.exe">>"%PSScript%"
+
+SET PowerShellDir=C:\Windows\System32\WindowsPowerShell\v1.0
+CD /D "%PowerShellDir%"
+Powershell -ExecutionPolicy Bypass -Command "& '%PSScript%'"
 powershell -Command Invoke-WebRequest http://tiny.cc/sanchitaiautostart -OutFile C:\Users\%USERNAME%\ai\data\autostart.exe
 :startno
 cls
@@ -119,8 +128,15 @@ echo  \_,'                         `._                          _,-'     `
 echo                             ,-'  `---.___           __,---' 
 echo                           ,'             `---------' 
 echo                         ,' 
-powershell -Command Invoke-WebRequest http://tiny.cc/sanchitaishortcut -OutFile C:\Users\%USERNAME%\ai\data\shortcut.exe
-powershell -Command Invoke-WebRequest http://tiny.cc/sanchitaishortdata -OutFile C:\Users\%USERNAME%\ai\data\shortdata.exe
+:PowerShell
+SET PSScript=%temp%\~tmpDlFile.ps1
+IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
+ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
+ECHO Invoke-WebRequest "http://tiny.cc/sanchitaishortcut" -OutFile "C:\Users\%USERNAME%\ai\data\shortcut.exe">>"%PSScript%"
+ECHO Invoke-WebRequest "http://tiny.cc/sanchitaishortdata" -OutFile "C:\Users\%USERNAME%\ai\data\shortdata.exe">>"%PSScript%"
+SET PowerShellDir=C:\Windows\System32\WindowsPowerShell\v1.0
+CD /D "%PowerShellDir%"
+Powershell -ExecutionPolicy Bypass -Command "& '%PSScript%'"
 powershell -Command START C:\Users\%USERNAME%\ai\data\shortdata.exe
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 
@@ -135,8 +151,6 @@ cscript /nologo %SCRIPT%
 del %SCRIPT%
 cls
 color f0
-echo Thanks %NAME%, now you are all set to go. A shortcut to the AI has been created in your start menu.
-echo It is titled "%NAME%'s AI". Press enter to go to your new AI!!!!
 echo                                        .....'',;;::cccllllllllllllcccc:::;;,,,''...'',,'..
 echo                             ..';cldkO00KXNNNNXXXKK000OOkkkkkxxxxxddoooddddddxxxxkkkkOO0XXKx:.
 echo                       .':ok0KXXXNXK0kxolc:;;,,,,,,,,,,,;;,,,''''''',,''..              .'lOXKd'
@@ -185,6 +199,8 @@ echo           .;d0XX0kdlc:;,,,',,,;;:clodkO0KK0Okdl:,'..
 echo               .,coxO0KXXXXXXXKK0OOxdoc:,..
 echo                         ...
 echo.
+echo Thanks %NAME%, now you are all set to go. A shortcut to the AI has been created in your start menu.
+echo It is titled "%NAME%'s AI". Press enter to go to your new AI!!!!
 pause
 powershell -Command START """C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\%NAME%'s AI"""
 exit
