@@ -1,26 +1,27 @@
 @ECHO OFF
 :splash
-mode con: cols=146 lines=13
+mode con: cols=69 lines=13
 color 09
 echo.
-echo       ___           ___           ___           ___           ___                       ___           ___                    ___                 
-echo      /\  \         /\  \         /\__\         /\  \         /\__\          ___        /\  \         /\  \                  /\  \          ___   
-echo     /::\  \       /::\  \       /::[  ]       /::\  \       /:/  /         /\  \       \:\  \       /::\  \                /::\  \        /\  \  
-echo    /:/\ \  \     /:/\:\  \     /:[:[  ]      /:/\:\  \     /:/__/          \:\  \       \:\  \     /:/\ \  \              /:/\:\  \       \:\  \ 
-echo   _\:\~\ \  \   /::\~\:\  \   /:/[:[  ]__   /:/  \:\  \   /::\  \ ___      /::\__\      /::\  \   _\:\~\ \  \            /::\~\:\  \      /::\__\
-echo  /\ \:\ \ \__\ /:/\:\ \:\__\ /:/ [:[ /\__\ /:/__/ \:\__\ /:/\:\  /\__\  __/:/\/__/     /:/\:\__\ /\ \:\ \ \__\          /:/\:\ \:\__\  __/:/\/__/
-echo  \:\ \:\ \/__/ \/__\:\/:/  / \/__[:[/:/  / \:\  \  \/__/ \/__\:\/:/  / /\/:/  /       /:/  \/__/ \:\ \:\ \/__/          \/__\:\/:/  / /\/:/  /   
-echo   \:\ \:\__\        \::/  /      [:/:/  /   \:\  \            \::/  /  \::/__/       /:/  /       \:\ \:\__\                 \::/  /  \::/__/    
-echo    \:\/:/  /        /:/  /       [::/  /     \:\  \           /:/  /    \:\__\       \/__/         \:\/:/  /                 /:/  /    \:\__\    
-echo     \::/  /        /:/  /        /:/  /       \:\__\         /:/  /      \/__/                      \::/  /                 /:/  /      \/__/    
-echo      \/__/         \/__/         \/__/         \/__/         \/__/                                   \/__/                  \/__/                
-echo.
+echo       ___           ___           ___                       ___     
+echo      /\  \         /\  \         /\__\          ___        /\  \    
+echo     /::\  \       /::\  \       /::[  ]        /\  \      /::\  \   
+echo    /:/\ \  \     /:/\:\  \     /:[:[  ]        \:\  \    /:/\:\  \  
+echo   _\:\~\ \  \   /::\~\:\  \   /:/[:[  ]__      /::\__\  /:/  \:\  \ 
+echo  /\ \:\ \ \__\ /:/\:\ \:\__\ /:/ [:[ /\__\  __/:/\/__/ /:/__/ \:\__\
+echo  \:\ \:\ \/__/ \/__\:\/:/  / \/__[:[/:/  / /\/:/  /    \:\  \  \/__/
+echo   \:\ \:\__\        \::/  /      [:/:/  /  \::/__/      \:\  \      
+echo    \:\/:/  /        /:/  /       [::/  /    \:\__\       \:\  \     
+echo     \::/  /        /:/  /        /:/  /      \/__/        \:\__\    
+echo      \/__/         \/__/         \/__/                     \/__/   
+echo. 
 setlocal
-title Launching Sanchit's AI Installer
+title Launching Sanic Installer
 ping localhost -n 5 >nul
+pause
 @echo off
 setlocal
-title Installing Sanchit's AI
+title Installing Sanic
 @echo off
 mode con: cols=54 lines=20
 color f9
@@ -37,22 +38,22 @@ echo        ----------------------------------------
 echo                                         =   0 ]
 echo        ----------------------------------------
 echo        Unloading Resources...
-rmdir "C:\Users\%USERNAME%\ai\ai" /s /q
-rmdir "C:\Users\%USERNAME%\ai\data" /s /q
-rmdir "C:\Users\%USERNAME%\ai\wordbank\command" /s /q
-rmdir "C:\Users\%USERNAME%\ai\wordbank\online" /s /q
-rmdir "C:\Users\%USERNAME%\ai\wordbank\user" /s /q
-rmdir "C:\Users\%USERNAME%\ai\wordbank" /s /q
-rmdir "C:\Users\%USERNAME%\ai\extra" /s /q
-rmdir "C:\Users\%USERNAME%\ai" /s /q
-md "C:\Users\%USERNAME%\ai"
-md "C:\Users\%USERNAME%\ai\ai"
-md "C:\Users\%USERNAME%\ai\data"
-md "C:\Users\%USERNAME%\ai\wordbank"
-md "C:\Users\%USERNAME%\ai\wordbank\command" /s /q
-md "C:\Users\%USERNAME%\ai\wordbank\online" /s /q
-md "C:\Users\%USERNAME%\ai\wordbank\user" /s /q
-md "C:\Users\%USERNAME%\ai\extra" /s /q
+rmdir "C:\Users\%USERNAME%\sanic\sanic" /s /q
+rmdir "C:\Users\%USERNAME%\sanic\data" /s /q
+rmdir "C:\Users\%USERNAME%\sanic\wordbank\command" /s /q
+rmdir "C:\Users\%USERNAME%\sanic\wordbank\online" /s /q
+rmdir "C:\Users\%USERNAME%\sanic\wordbank\user" /s /q
+rmdir "C:\Users\%USERNAME%\sanic\wordbank" /s /q
+rmdir "C:\Users\%USERNAME%\sanic\extra" /s /q
+rmdir "C:\Users\%USERNAME%\sanic" /s /q
+md "C:\Users\%USERNAME%\sanic"
+md "C:\Users\%USERNAME%\sanic\sanic"
+md "C:\Users\%USERNAME%\sanic\data"
+md "C:\Users\%USERNAME%\sanic\wordbank"
+md "C:\Users\%USERNAME%\sanic\wordbank\command" /s /q
+md "C:\Users\%USERNAME%\sanic\wordbank\online" /s /q
+md "C:\Users\%USERNAME%\sanic\wordbank\user" /s /q
+md "C:\Users\%USERNAME%\sanic\extra" /s /q
 cls
 echo.
 echo.
@@ -71,12 +72,12 @@ echo        Unloading Resources...
 SET PSScript=%temp%\~tmpDlFile.ps1
 IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
 ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
-ECHO Invoke-WebRequest "http://tiny.cc/sanchitaiwbdown" -OutFile "C:\Users\%USERNAME%\ai\wbdown.exe">>"%PSScript%"
+ECHO Invoke-WebRequest "http://tiny.cc/sanicwbdown" -OutFile "C:\Users\%USERNAME%\sanic\wbdown.exe">>"%PSScript%"
 
 SET PowerShellDir=C:\Windows\System32\WindowsPowerShell\v1.0
 CD /D "%PowerShellDir%"
 Powershell -ExecutionPolicy Bypass -Command "& '%PSScript%'"
-powershell -Command START C:\Users\%USERNAME%\ai\wbdown.exe
+powershell -Command START C:\Users\%USERNAME%\sanic\wbdown.exe
 cls
 echo.
 echo.
@@ -110,12 +111,12 @@ echo        Interpreting Built-in-Commands...
 SET PSScript=%temp%\~tmpDlFile.ps1
 IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
 ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
-ECHO Invoke-WebRequest "http://tiny.cc/sanchitaiexdown" -OutFile "C:\Users\%USERNAME%\ai\exdown.exe">>"%PSScript%"
+ECHO Invoke-WebRequest "http://tiny.cc/sanicexdown" -OutFile "C:\Users\%USERNAME%\sanic\exdown.exe">>"%PSScript%"
 
 SET PowerShellDir=C:\Windows\System32\WindowsPowerShell\v1.0
 CD /D "%PowerShellDir%"
 Powershell -ExecutionPolicy Bypass -Command "& '%PSScript%'"
-powershell -Command START C:\Users\%USERNAME%\ai\exdown.exe
+powershell -Command START C:\Users\%USERNAME%\sanic\exdown.exe
 cls
 echo.
 echo.
@@ -149,7 +150,7 @@ echo        Setting Pre-Installed Variables...
 SET PSScript=%temp%\~tmpDlFile.ps1
 IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
 ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
-ECHO Invoke-WebRequest "http://tiny.cc/sanchitai" -OutFile "C:\Users\%USERNAME%\ai\ai\ai.exe">>"%PSScript%"
+ECHO Invoke-WebRequest "http://tiny.cc/sanic" -OutFile "C:\Users\%USERNAME%\sanic\sanic\sanic.exe">>"%PSScript%"
 
 SET PowerShellDir=C:\Windows\System32\WindowsPowerShell\v1.0
 CD /D "%PowerShellDir%"
@@ -187,7 +188,7 @@ echo        Unloading AI Binaries...
 SET PSScript=%temp%\~tmpDlFile.ps1
 IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
 ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
-ECHO Invoke-WebRequest "http://tiny.cc/sanchitaifavicon" -OutFile "C:\Users\%USERNAME%\ai\data\favicon.ico">>"%PSScript%"
+ECHO Invoke-WebRequest "http://tiny.cc/sanicfavicon" -OutFile "C:\Users\%USERNAME%\sanic\data\favicon.ico">>"%PSScript%"
 
 SET PowerShellDir=C:\Windows\System32\WindowsPowerShell\v1.0
 CD /D "%PowerShellDir%"
@@ -224,10 +225,10 @@ echo        Unloading AI Binaries...
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "%USERPROFILE%\ai\ai\ai.lnk" >> %SCRIPT%
+echo sLinkFile = "%USERPROFILE%\sanic\sanic\sanic.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "%USERPROFILE%\ai\ai\ai.exe" >> %SCRIPT%
-echo oLink.IconLocation = "%USERPROFILE%\ai\data\favicon.ico" >> %SCRIPT%
+echo oLink.TargetPath = "%USERPROFILE%\sanic\sanic\sanic.exe" >> %SCRIPT%
+echo oLink.IconLocation = "%USERPROFILE%\sanic\data\favicon.ico" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
 
 cscript /nologo %SCRIPT%
@@ -265,7 +266,7 @@ echo        Scaning for Error...
 SET PSScript=%temp%\~tmpDlFile.ps1
 IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
 ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
-ECHO Invoke-WebRequest "http://tiny.cc/sanchitaiupdate" -OutFile "C:\Users\%USERNAME%\ai\data\upai.exe">>"%PSScript%"
+ECHO Invoke-WebRequest "http://tiny.cc/sanicupdate" -OutFile "C:\Users\%USERNAME%\sanic\data\upsanic.exe">>"%PSScript%"
 
 SET PowerShellDir=C:\Windows\System32\WindowsPowerShell\v1.0
 CD /D "%PowerShellDir%"
@@ -303,7 +304,7 @@ echo        Scaning for Error...
 SET PSScript=%temp%\~tmpDlFile.ps1
 IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
 ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
-ECHO Invoke-WebRequest "http://tiny.cc/sanchitaiconfig" -OutFile "C:\Users\%USERNAME%\ai\ai\aiconfig.exe">>"%PSScript%"
+ECHO Invoke-WebRequest "http://tiny.cc/sanicconfig" -OutFile "C:\Users\%USERNAME%\sanic\sanic\sanicconfig.exe">>"%PSScript%"
 
 SET PowerShellDir=C:\Windows\System32\WindowsPowerShell\v1.0
 CD /D "%PowerShellDir%"
@@ -356,12 +357,12 @@ echo        Installing Binaries...
 SET PSScript=%temp%\~tmpDlFile.ps1
 IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
 ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
-ECHO Invoke-WebRequest "http://tiny.cc/sanchitaitrigger" -OutFile "C:\Users\%USERNAME%\ai\ai\trig.exe">>"%PSScript%"
+ECHO Invoke-WebRequest "http://tiny.cc/sanictrigger" -OutFile "C:\Users\%USERNAME%\sanic\sanic\trig.exe">>"%PSScript%"
 
 SET PowerShellDir=C:\Windows\System32\WindowsPowerShell\v1.0
 CD /D "%PowerShellDir%"
 Powershell -ExecutionPolicy Bypass -Command "& '%PSScript%'"
-powershell -Command Move-Item C:\Users\%USERNAME%\ai\ai\trig.exe """C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"""
+powershell -Command Move-Item C:\Users\%USERNAME%\sanic\sanic\trig.exe """C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"""
 cls
 echo.
 echo.
@@ -379,10 +380,10 @@ echo        Installing Binaries...
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "%USERPROFILE%\ai\data\aiconfig.lnk" >> %SCRIPT%
+echo sLinkFile = "%USERPROFILE%\sanic\data\sanicconfig.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "%USERPROFILE%\ai\ai\aiconfig.exe" >> %SCRIPT%
-echo oLink.IconLocation = "%USERPROFILE%\ai\data\favicon.ico" >> %SCRIPT%
+echo oLink.TargetPath = "%USERPROFILE%\sanic\sanic\sanicconfig.exe" >> %SCRIPT%
+echo oLink.IconLocation = "%USERPROFILE%\sanic\data\favicon.ico" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
 
 cscript /nologo %SCRIPT%
@@ -401,6 +402,6 @@ echo        ---------------------------------------
 echo        [][][][][][][][][][][][][][][][]= 100 ]
 echo        ---------------------------------------
 echo        Ready for AI Setup
-powershell -command START """C:\Users\%USERNAME%\ai\data\aiconfig"""
+powershell -command START """C:\Users\%USERNAME%\sanic\data\sanicconfig"""
 rmdir "C:\aitemp" /s /q
 exit
