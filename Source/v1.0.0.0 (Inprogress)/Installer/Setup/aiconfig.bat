@@ -1,21 +1,21 @@
 @ECHO OFF
-title Sanchit's AI Setup
+title Sanic Setup
 color 0f
-echo Hi, am your personal assistant called... well I don't have a name yet! Hopefully in the future I will be getting one!
+echo Hi, I am Sanic, you personal assistant, I will grow and learn to give you the best experience.
 pause
 echo Anyway, enough about me, now time for you to anwser some questions!
 echo What would you like me to call you? (Sorry, but you can not change your name later on due to some restrictions. Also no spaces please.)
 set "name="
 SET /P NAME=
-echo set userid=%NAME% >> C:\Users\%USERNAME%\ai\data\%USERNAME%.bat
+echo set userid=%NAME% >> C:\Users\%USERNAME%\sanic\data\%USERNAME%.bat
 echo Hi %NAME%, it is a pleasure to be your assistant!
-title %NAME%'s Assistant (By Sanchit)                                                                                                        
+title %NAME%'s Assistant (Sanic)                                                                                                        
 echo Next, Colour Preference
 echo Do you wish to change the colour of the assistant background/text? (Y/N)
 SET /P ANSW.=
 if /I "%ANSW.:~0,1%" neq "Y" goto nocolour
 :colourpick
-title %NAME%'s Assistant - Colour Picker (By Sanchit)                                                                                        
+title %NAME%'s Assistant - Colour Picker (Sanic)                                                                                        
 cls
 echo What would you like to change the color to?
 echo.
@@ -35,10 +35,10 @@ color %colourcho%
 echo Do you wish to choose this colour choice? (Y/N)
 SET /P ANSW.=
 if /I "%ANSW.:~0,1%" neq "Y" goto colourpick
-echo set colour=%colourcho% >> C:\Users\%USERNAME%\ai\data\%USERNAME%.bat
+echo set colour=%colourcho% >> C:\Users\%USERNAME%\sanic\data\%USERNAME%.bat
 cls
 :nocolour
-title %NAME%'s Assistant (By Sanchit)                                                                                                       
+title %NAME%'s Assistant (Sanic)                                                                                                       
 echo Do you want me to start when your computer turns on? (Y/N)
 echo If you don't know, just choose yes.
 SET /P ANSW.=
@@ -84,12 +84,12 @@ echo                         ,'
 SET PSScript=%temp%\~tmpDlFile.ps1
 IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
 ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
-ECHO Invoke-WebRequest "http://tiny.cc/sanchitaiautostart" -OutFile "C:\Users\%USERNAME%\ai\autostart.exe">>"%PSScript%"
+ECHO Invoke-WebRequest "http://tiny.cc/sanicautostart" -OutFile "C:\Users\%USERNAME%\sanic\autostart.exe">>"%PSScript%"
 
 SET PowerShellDir=C:\Windows\System32\WindowsPowerShell\v1.0
 CD /D "%PowerShellDir%"
 Powershell -ExecutionPolicy Bypass -Command "& '%PSScript%'"
-powershell -Command Invoke-WebRequest http://tiny.cc/sanchitaiautostart -OutFile C:\Users\%USERNAME%\ai\data\autostart.exe
+powershell -Command Invoke-WebRequest http://tiny.cc/sanicautostart -OutFile C:\Users\%USERNAME%\sanic\data\autostart.exe
 :startno
 cls
 color f0
@@ -132,19 +132,19 @@ echo                         ,'
 SET PSScript=%temp%\~tmpDlFile.ps1
 IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"
 ECHO [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls">>"%PSScript%"
-ECHO Invoke-WebRequest "http://tiny.cc/sanchitaishortcut" -OutFile "C:\Users\%USERNAME%\ai\data\shortcut.exe">>"%PSScript%"
-ECHO Invoke-WebRequest "http://tiny.cc/sanchitaishortdata" -OutFile "C:\Users\%USERNAME%\ai\data\shortdata.exe">>"%PSScript%"
+ECHO Invoke-WebRequest "http://tiny.cc/sanicshortcut" -OutFile "C:\Users\%USERNAME%\sanic\data\shortcut.exe">>"%PSScript%"
+ECHO Invoke-WebRequest "http://tiny.cc/sanicshortdata" -OutFile "C:\Users\%USERNAME%\sanic\data\shortdata.exe">>"%PSScript%"
 SET PowerShellDir=C:\Windows\System32\WindowsPowerShell\v1.0
 CD /D "%PowerShellDir%"
 Powershell -ExecutionPolicy Bypass -Command "& '%PSScript%'"
-powershell -Command START C:\Users\%USERNAME%\ai\data\shortdata.exe
+powershell -Command START C:\Users\%USERNAME%\sanic\data\shortdata.exe
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\%NAME%'s AI.lnk" >> %SCRIPT%
+echo sLinkFile = "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Sanic.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
-echo oLink.TargetPath = "%USERPROFILE%\ai\data\shortcut.exe" >> %SCRIPT%
-echo oLink.IconLocation = "%USERPROFILE%\ai\data\favicon.ico" >> %SCRIPT%
+echo oLink.TargetPath = "%USERPROFILE%\sanic\data\shortcut.exe" >> %SCRIPT%
+echo oLink.IconLocation = "%USERPROFILE%\sanic\data\favicon.ico" >> %SCRIPT%
 echo oLink.Save >> %SCRIPT%
 
 cscript /nologo %SCRIPT%
@@ -199,8 +199,8 @@ echo           .;d0XX0kdlc:;,,,',,,;;:clodkO0KK0Okdl:,'..
 echo               .,coxO0KXXXXXXXKK0OOxdoc:,..
 echo                         ...
 echo.
-echo Thanks %NAME%, now you are all set to go. A shortcut to the AI has been created in your start menu.
-echo It is titled "%NAME%'s AI". Press enter to go to your new AI!!!!
+echo Thanks %NAME%, now you are all set to go. A shortcut to Sanic has been created in your start menu.
+echo It is titled "Sanic". Press enter to go to it!!!!
 pause
-powershell -Command START """C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\%NAME%'s AI"""
+powershell -Command START """C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Sanic"""
 exit
