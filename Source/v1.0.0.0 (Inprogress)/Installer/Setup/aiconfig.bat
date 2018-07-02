@@ -144,7 +144,7 @@ echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
 echo sLinkFile = "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Sanic.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "%USERPROFILE%\sanic\data\shortcut.exe" >> %SCRIPT%
-echo oLink.IconLocation = "%USERPROFILE%\sanic\data\favicon.ico" >> %SCRIPT%
+echo oLink.IconLocation = "%USERPROFILE%\sanic\data\favicon.ico" >> %SCRIPT%djsassadssdssadsadddaskkaddakldkadddddsadsdhdsdghdgdghdghdghdghdhjdhdhj
 echo oLink.Save >> %SCRIPT%
 
 cscript /nologo %SCRIPT%
