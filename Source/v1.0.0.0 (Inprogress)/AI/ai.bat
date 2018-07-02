@@ -13,7 +13,7 @@ echo [ (C)Sanchit Sharma and Nikith Kaluwitharana                               
 echo [                                                                               ]
 echo [ Problems? Questions? Suggestions? Applications? Contact me by typing in:      ]
 echo [ Contact Sanic or Help                                                         ]
-echo [ Type cls to clear screen                                                      ]
+echo [ Type clear to clear screen                                                    ]
 echo [===============================================================================]
 echo.
 :begin
@@ -22,7 +22,7 @@ echo Ask Anything %userid%!
 SET /P TALK=
 if "%TALK%" EQU "" goto begin
 set TALK=%TALK:?=%
-if /I "%TALK%" EQU "cls" goto clear
+if /I "%TALK%" EQU "clear" goto clear
 if exist "C:\Users\%USERNAME%\sanic\wordbank\command\%TALK%.bat" goto com
 if exist "C:\Users\%USERNAME%\sanic\wordbank\online\%TALK%.bat" goto con1
 if exist "C:\Users\%USERNAME%\sanic\wordbank\user\%TALK%.bat" goto con2
