@@ -1,2 +1,2 @@
-# sanic
+# Sanic
 An assistant. 
